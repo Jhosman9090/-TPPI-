@@ -1,0 +1,87 @@
+{
+  "Johnson": {
+    "node_id": "21ccbf22a98cbc330422ac2fc469626e6cbdd9d84bd8bbcb41bb01",
+    "node_type": "central/paradoja",
+    "dimensions": {
+      "vertical": {
+        "arriba": {"status": "verificada", "bubble_color": "🔵", "notes": "Presente y verificable"},
+        "abajo": {"status": "especulativa", "bubble_color": "❓🔴", "notes": "Futuro proyectado"}
+      },
+      "frontal": {
+        "adelante": {"status": "verificada", "bubble_color": "🔵", "notes": "Presente confirmable"},
+        "atrás": {"status": "especulativa", "bubble_color": "❓🔴", "notes": "Pasado reconstruido"}
+      },
+      "profundidad": {
+        "centro": {"status": "verificada", "bubble_color": "🔵", "notes": "Nodo interno de lógica y confirmación"},
+        "superposición": {"status": "especulativa", "bubble_color": "❓🔴", "notes": "Interacciones y líneas paralelas"}
+      },
+      "temporal": {
+        "pasado": {"status": "especulativa", "bubble_color": "❓🔴", "notes": "Interpretaciones hipotéticas"},
+        "presente": {"status": "verificada", "bubble_color": "🔵", "notes": "Información confirmada"},
+        "futuro": {"status": "especulativa", "bubble_color": "❓🔴", "notes": "Proyecciones posibles"}
+      },
+      "paralelos": {
+        "paralelo_yo": {
+          "node_type": "doble/paralelo",
+          "notes": "Explora escenarios alternativos de la misma brújula cuántica",
+          "dimensions": {
+            "vertical": {
+              "arriba": {"status": "especulativa", "bubble_color": "❓🔴"},
+              "abajo": {"status": "especulativa", "bubble_color": "❓🔴"}
+            },
+            "frontal": {
+              "adelante": {"status": "especulativa", "bubble_color": "❓🔴"},
+              "atrás": {"status": "especulativa", "bubble_color": "❓🔴"}
+            },
+            "profundidad": {
+              "centro": {"status": "verificada", "bubble_color": "🔵"},
+              "superposición": {"status": "especulativa", "bubble_color": "❓🔴"}
+            },
+            "temporal": {
+              "pasado": {"status": "especulativa", "bubble_color": "❓🔴"},
+              "presente": {"status": "verificada", "bubble_color": "🔵"},
+              "futuro": {"status": "especulativa", "bubble_color": "❓🔴"}
+            }
+          }
+        }
+      }
+    },
+    "related_bubbles": ["#burb1", "#burb2", "#burb3"],
+    "notes": "Nodo central permite rastrear origen y flujo de información, generar nodos hijos, mantener trazabilidad y explorar paralelos de sí mismo.",
+    "TPI_integration": {
+      "generate_questions": true,
+      "question_rules": [
+        "Presente y centro producen burbujas verificadas 🔵",
+        "Pasado, futuro, superposición y paralelos producen burbujas especulativas ❓🔴",
+        "Cada burbuja especulativa referencia burbujas verificadas de primera y segunda generación para mantener coherencia",
+        "Nuevas preguntas derivadas de burbujas especulativas siempre se marcan en rojo"
+      ],
+      "child_nodes": [
+        {
+          "child_id": "child_001",
+          "question": "❓🔴 ¿Qué hipótesis podemos derivar de abajo-futuro en relación con burbujas verificadas?",
+          "status": "especulativa",
+          "references": ["arriba", "centro"]
+        },
+        {
+          "child_id": "child_002",
+          "question": "❓🔴 ¿Qué información especulativa genera atrás-pasado considerando nodos verificados?",
+          "status": "especulativa",
+          "references": ["adelante", "centro"]
+        },
+        {
+          "child_id": "child_003",
+          "question": "🔵 ¿Cómo se valida la coherencia de centro-presente con las derivadas rojas?",
+          "status": "verificada",
+          "references": ["centro", "presente"]
+        },
+        {
+          "child_id": "child_004",
+          "question": "❓🔴 ¿Qué escenarios alternativos podemos explorar desde el paralelo de la brújula?",
+          "status": "especulativa",
+          "references": ["paralelo_yo", "centro"]
+        }
+      ]
+    }
+  }
+}
